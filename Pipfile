@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 python-telegram-bot = "*"
 python-decouple = "*"
+psycopg2 = "*"
+peewee = "*"
 
 [requires]
 python_version = "3.8"
