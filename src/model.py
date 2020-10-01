@@ -8,3 +8,5 @@ class Suitor(Model):
     """
     chat_id = CharField()
     messages = IntegerField()
+
+# 'postgresql://postgres:admin@postgres:5432/postgres'
