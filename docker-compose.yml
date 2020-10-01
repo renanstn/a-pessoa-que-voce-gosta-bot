@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: admin
+      POSTGRES_DB: messages
 
   adminer:
     image: adminer
