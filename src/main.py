@@ -2,8 +2,8 @@ import re
 import random
 from telegram.ext import Updater, MessageHandler, Filters
 from model import Suitor
-from settings import BOT_TOKEN, DATABASE_URL, MAX_MESSAGES,
-                     HM_CHANCES, HEROKU_URL, PORT
+from settings import (BOT_TOKEN, DATABASE_URL, MAX_MESSAGES,
+    HM_CHANCES, HEROKU_URL, PORT)
 
 
 updater = Updater(token=BOT_TOKEN, use_context=True)
