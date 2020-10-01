@@ -1,5 +1,7 @@
 from peewee import Model, CharField, IntegerField, PostgresqlDatabase
-from playhouse.db_url import connect
+
+
+database = PostgresqlDatabase(None)
 
 
 class Suitor(Model):
@@ -8,5 +10,7 @@ class Suitor(Model):
     """
     chat_id = CharField()
     messages = IntegerField()
+    class Meta:
+        database = database
 
 # 'postgresql://postgres:admin@postgres:5432/postgres'
