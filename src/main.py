@@ -1,6 +1,6 @@
 import re
 import random
-from settings import BOT_TOKEN, DATABASE_URL, MAX_MESSAGES, HM_CHANCES
+from settings import BOT_TOKEN, DATABASE_URL, MAX_MESSAGES, HM_CHANCES, PORT
 from telegram.ext import Updater, MessageHandler, Filters
 from model import Suitor
 
@@ -39,4 +39,9 @@ def handle_message(update, context):
 message_handler = MessageHandler(Filters.all, handle_message)
 dispatcher.add_handler(message_handler)
 
-updater.start_polling()
+# updater.start_polling()
+updater.start_webhook(
+    listen='0.0.0.0',
+    port=PORT,
+    url_path=BOT_TOKEN
+)

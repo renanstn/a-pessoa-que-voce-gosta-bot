@@ -1,6 +1,7 @@
 from decouple import config
 
 
+PORT = config('PORT', default=5000)
 BOT_TOKEN = config('BOT_TOKEN')
 MAX_MESSAGES = config('MAX_MESSAGES', default=10, cast=int)
 HM_CHANCES = config('HM_CHANCES', default=0.4, cast=float)
