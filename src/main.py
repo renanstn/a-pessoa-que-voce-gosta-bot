@@ -1,6 +1,6 @@
 import re
 import random
-from telegram.ext import Updater, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 from model import Suitor
 from settings import (BOT_TOKEN, DATABASE_URL, MAX_MESSAGES,
     HM_CHANCES, HEROKU_URL, PORT)
@@ -9,6 +9,16 @@ from settings import (BOT_TOKEN, DATABASE_URL, MAX_MESSAGES,
 updater = Updater(token=BOT_TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 Suitor.create_table()
+
+
+def start(update, context):
+    message = "Bem vindo(a) ao bot que simula uma conversa com a \
+        pessoa que você gosta. Esperamos que tenha uma experiência \
+        imersiva e o mais próximo possível da realidade."
+    context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text=message
+    )
 
 
 def handle_message(update, context):
@@ -37,7 +47,10 @@ def handle_message(update, context):
             context.bot.send_message(chat_id=chat_id, text="hm")
 
 
-message_handler = MessageHandler(Filters.all, handle_message)
+start_handler = CommandHandler('start', start)
+message_handler = MessageHandler(Filters.text, handle_message)
+
+dispatcher.add_handler(start_handler)
 dispatcher.add_handler(message_handler)
 
 # updater.start_polling()
