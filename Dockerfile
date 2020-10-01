@@ -5,6 +5,6 @@ ADD . /app
 
 RUN pip install --upgrade pip
 RUN pip install pipenv
-RUN pipenv install
+RUN pipenv install --system --deploy
 
 CMD ["python", "main.py"]
