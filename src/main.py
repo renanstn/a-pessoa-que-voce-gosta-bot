@@ -11,17 +11,6 @@ dispatcher = updater.dispatcher
 Suitor.create_table()
 
 
-def start(update, context):
-    message = ("Bem vindo(a) ao bot que simula uma conversa com a "
-        "pessoa que você gosta. Esperamos que tenha uma experiência "
-        "imersiva e o mais próximo possível da realidade."
-    )
-    context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text=message
-    )
-
-
 def handle_message(update, context):
     chat_id = update.effective_chat.id
     message = update.message.text.lower()
@@ -48,10 +37,8 @@ def handle_message(update, context):
             context.bot.send_message(chat_id=chat_id, text="hm")
 
 
-start_handler = CommandHandler('start', start)
 message_handler = MessageHandler(Filters.text, handle_message)
 
-dispatcher.add_handler(start_handler)
 dispatcher.add_handler(message_handler)
 
 # updater.start_polling()
