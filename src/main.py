@@ -12,9 +12,10 @@ Suitor.create_table()
 
 
 def start(update, context):
-    message = "Bem vindo(a) ao bot que simula uma conversa com a \
-        pessoa que você gosta. Esperamos que tenha uma experiência \
-        imersiva e o mais próximo possível da realidade."
+    message = ("Bem vindo(a) ao bot que simula uma conversa com a "
+        "pessoa que você gosta. Esperamos que tenha uma experiência "
+        "imersiva e o mais próximo possível da realidade."
+    )
     context.bot.send_message(
         chat_id=update.effective_chat.id,
         text=message
