@@ -1,6 +1,7 @@
 from decouple import config
 
 
+HEROKU_URL = config('HEROKU_URL')
 PORT = config('PORT', default=5000)
 BOT_TOKEN = config('BOT_TOKEN')
 MAX_MESSAGES = config('MAX_MESSAGES', default=10, cast=int)
