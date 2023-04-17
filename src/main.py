@@ -3,7 +3,7 @@ import random
 from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 from model import Suitor
 from settings import (BOT_TOKEN, DATABASE_URL, MAX_MESSAGES,
-    HM_CHANCES, HEROKU_URL, PORT)
+    HM_CHANCES, URL, PORT)
 
 
 updater = Updater(token=BOT_TOKEN, use_context=True)
@@ -47,5 +47,5 @@ updater.start_webhook(
     port=PORT,
     url_path=BOT_TOKEN
 )
-updater.bot.set_webhook(HEROKU_URL + BOT_TOKEN)
+updater.bot.set_webhook(URL + BOT_TOKEN)
 print("Mozão ta on!")
