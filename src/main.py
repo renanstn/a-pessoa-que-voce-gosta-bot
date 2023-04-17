@@ -47,5 +47,5 @@ updater.start_webhook(
     port=PORT,
     url_path=BOT_TOKEN
 )
-updater.bot.set_webhook(URL + BOT_TOKEN)
+updater.bot.set_webhook(f"{URL}/{BOT_TOKEN}")
 print("Mozão ta on!")
