@@ -4,7 +4,7 @@
 
 Querendo chamar aquele(a) **@** no chat mas tem vergonha, ou não sabe como ele(a) vai reagir?
 
-- **SEUS PROBLEMAS ACABARAM!**
+- **SEUS PROBLEMAS ACABARAM!!!**
 
 Deleite os seus olhos para a experiência simulada **definitiva** de como é conversar com a pessoa que você gosta!
 
